@@ -1,0 +1,37 @@
+\section{Alcances y limitaciones}
+
+Para este proyecto se utilizarán diversas herramientas, tecnologías, hardware y software que permitirán una integración efectiva del sistema.
+
+\subsection{Hardware}
+\begin{itemize}
+    \item \textbf{ESP32-CAM:} Este módulo se utilizará para capturar imágenes de los limones en tiempo real. Su integración se realizará mediante conexión Wi-Fi, permitiendo la transmisión de datos y la comunicación con un servidor o aplicación de procesamiento de imágenes.
+    
+    \item \textbf{Sensor de Color TCS3200:} Este sensor permitirá medir los parámetros de color de la piel de los limones. Se integrará directamente con el ESP32-CAM, enviando datos sobre el color detectado para su análisis.
+    
+    \item \textbf{Plataforma de Prueba (PCB):} Se utilizará una placa de circuito impreso personalizada para montar el ESP32-CAM y el sensor de color. Esto garantizará una conexión estable y facilitará el manejo del hardware en entornos de producción.
+\end{itemize}
+
+\subsection{Software}
+\begin{itemize}
+    \item \textbf{Python:} Se utilizará como lenguaje de programación principal para el procesamiento de imágenes y la implementación de algoritmos de clasificación. Python es ideal por su amplia variedad de bibliotecas y su compatibilidad con tecnologías de visión artificial.
+    
+    \item \textbf{OpenCV:} Esta biblioteca de visión por computadora será fundamental para procesar las imágenes capturadas por el ESP32-CAM. Se encargará de realizar la segmentación y análisis de color, así como de aplicar algoritmos de clasificación.
+    
+    \item \textbf{Flask:} Este framework de microservicio se utilizará para crear una API que permita la comunicación entre el hardware y el software. La API recibirá datos del sensor y de la cámara, procesará la información y devolverá los resultados de clasificación.
+\end{itemize}
+
+\subsection{Tecnologías y APIs}
+\begin{itemize}
+    \item \textbf{RESTful API:} Se implementará una API RESTful para permitir la comunicación entre el módulo ESP32-CAM, el servidor y cualquier aplicación frontend que muestre los resultados. Esta API será responsable de recibir imágenes y datos del sensor, procesarlos y devolver la clasificación de calidad.
+    
+    \item \textbf{Firebase:} Se utilizará Firebase como base de datos en tiempo real para almacenar los resultados de la clasificación y permitir el acceso a los datos desde diferentes dispositivos. Firebase facilitará la sincronización de datos entre el servidor y las aplicaciones que utilicen la información.
+\end{itemize}
+
+\subsection{Integración}
+\begin{itemize}
+    \item \textbf{Comunicación en Tiempo Real:} El ESP32-CAM enviará imágenes y datos del sensor de color a la API RESTful implementada en Flask. Esta API procesará la información utilizando OpenCV y devolverá la clasificación de calidad de los limones.
+    
+    \item \textbf{Almacenamiento y Acceso a Datos:} Los resultados de clasificación se almacenarán en Firebase, permitiendo su acceso desde aplicaciones móviles o web. Esto facilitará la consulta de datos históricos y el monitoreo de la calidad de los limones clasificados.
+    
+    \item \textbf{Interfaz de Usuario:} Se desarrollará una interfaz web sencilla que se conectará a la API para mostrar los resultados de clasificación en tiempo real. Los usuarios podrán visualizar los datos almacenados en Firebase, facilitando la toma de decisiones en la cadena de suministro.
+\end{itemize}

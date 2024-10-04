@@ -1,0 +1,305 @@
+% Actualizacion 2024: Logotipos de la UPV
+
+
+\documentclass[12pt]{article}
+\usepackage[left=2.5cm,top=2.0cm,right=2.5cm,bottom=3.0cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+%\usepackage[english, american]{babel}
+%\usepackage[spanish,es-tabla]{babel}
+\usepackage[linguistics]{forest}
+\usepackage{amssymb, amsmath, amsbsy} % simbolitos
+\usepackage{longtable} % para tablas largas
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{parskip}
+\usepackage[skip=12pt plus1pt]{parskip}
+\usepackage{pdfpages} % Incluir PDF en documento en LATEX
+\usepackage{verbatim} % comentarios
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{pdflscape}
+\usepackage{multirow}
+\usepackage{afterpage}
+\usepackage{array,booktabs,ragged2e}
+%\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\listalgorithmname}{Lista de algoritmos}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Salida:}}
+
+% Comentario con respecto a las referencias:
+% Por defecto este documento utiliza el formato IEEEtr para formatear las referencias. Si algun asesor requiere formato APA, solo comente la siguiente linea y descomente la linea debajo. Tambien para que las citas funcionen de manera adecuada, el paquete label debe tener las opciones mostradas, o en su defecto, el año en el listado no lo muestra correctamente \usepackage[english, american]{babel}
+
+% Para utilizar el formato de citas IEEE y comentar los dos parrafos siguientes
+\usepackage[backend=bibtex,sorting=none]{biblatex}
+% Para utilizar el formato APA, sugiero comentar la linea anterior y descomentar las dos proximas lineas
+%\usepackage[backend=biber,style=apa]{biblatex}
+%\DeclareLanguageMapping{english}{american-apa}
+
+\makeatletter
+\DefineBibliographyExtras{spanish}{%
+  \setcounter{smartand}{1}%
+  \let\lbx@finalnamedelim=\lbx@es@smartand
+  \let\lbx@finallistdelim=\lbx@es@smartand
+}
+\renewbibmacro*{name:delim:apa:family-given}[1]{%
+  \ifnumgreater{\value{listcount}}{\value{liststart}}
+    {\ifboolexpr{
+       test {\ifnumless{\value{listcount}}{\value{liststop}}}
+       or
+       test \ifmorenames
+     }
+       {\printdelim{multinamedelim}}
+       {\lbx@finalnamedelim{#1}}}
+    {}}
+\makeatother
+
+
+% Estas lineas permiten romper los hipervinculos muy largos en las referencias!!!!
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\addbibresource{x.bib} % ARCHIVO DE BIBLIOGRAFÍA
+
+
+%\usepackage{url}
+\usepackage[bookmarks=true,breaklinks=true,bookmarksopen=false,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[hyphenbreaks]{breakurl}
+% Regla que define explicitamente que caracteres rompen los hipervinculos para separar las lineas
+%https://es.overleaf.com/11089898rhgykrqyqytx
+% Actualiza en automático la fecha de las citas de internet a la fecha de la compilación del documento
+\usepackage{datetime}
+\newdateformat{specialdate}{\twodigit{\THEDAY}-\twodigit{\THEMONTH}-\THEYEAR}
+%\newdateformat{specialdate}{\twodigit{\THEDAY}-\THEYEAR}
+\date{\specialdate\today}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.25mm}}
+
+
+% CONSTANTES NECESARIAS PARA EL DOCUMENTO ---> MODIFIQUEN A SU CRITERIO
+\newcommand{\ncarrera}            {Ingeniería en Tecnologías de la Información}
+\newcommand{\nasesorinstitucional}{Dr. Said Polanco Martagón}
+
+
+
+% ALUMNOS
+\newcommand{\NombreAlumno}{Erika Daniela Mallozzi Martínez y Heriberto Geovanny Nava Lopez}
+%Hombres cambien LA por EL
+\newcommand{\elolaNombreAlumno}{la}  
+\newcommand{\OA}           {a}  %Hombres cambien A por O
+\newcommand{\Matricula}{2130128 y 2130213}
+
+
+
+
+
+\newcommand{\NombreProyecto}{Prototipo de automatización de Clasificación de Limones por Calidad Utilizando
+Visión Artificial Basada en el Color.}
+\newcommand{\fechacarta}{26 de Abril de 2021}
+\newcommand{\ncuatrimestre}{Mayo-agosto 2021}
+\newcommand{\nevalador}{Dr. Said Polanco Martagón}
+\newcommand{\FechaExposicion}{11 de Agosto de 2021}
+\newcommand{\HoraExposionFormatoVenticuatroHoras}{10:00}
+\newcommand{\elolaNombreEmpresa}{la}  %Si la empresa es femenino (por ejemplo universidad, usen la) o masculino (el instituto) pongan el
+\newcommand{\organismoreceptor}   {Universidad Politécnica de Victoria}
+
+% NOTA: Dos diagonales juntas (\\) indican un saldo de linea. En este caso particular hay 2 (el titulo se ajusta a tres lineas, porque es muy largo. Hacer las adecuaciones pertinentes
+\newcommand{\NombreProyectoheader}     {Prototipo de automatización de Clasificación de Limones por Calidad Utilizando
+Visión Artificial Basada en el Color}
+\newcommand{\nasesorempresaria}   {Dr. Said Polanco Martagón}
+\newcommand{\fechaPortada}               {Octubre de 2024}
+
+
+
+
+
+\newcommand{\separacionCorta}{0.0cm}
+\newcommand{\separacionLarga}{0.5cm}
+
+\usepackage[overload]{textcase}
+\newcommand{\iemph}[1]{\MakeTextUppercase{#1}}
+
+\pagestyle{fancy}
+\headheight 45pt
+\fancyhead{} % Clear all header fields
+\fancyhead[L]{\includegraphics[height=1.00cm]{UTYP.png}}%
+\fancyhead[C]{\begin{center}\NombreProyectoheader\end{center}}%
+%\fancyhead[R]{\includegraphics[height=1.5cm]{LogoUPV_2019.png}}%
+\fancyhead[R]{\includegraphics[height=1.25cm]{LogoUPV_2023.png}}%
+\fancyfoot[R]{\thepage} % Clear all footer fields 
+\fancyfoot[C]{}
+\fancyfoot[L]{}
+
+\DefineBibliographyStrings{english}{%
+  references = {Referencias},% replace "references" with "bibliography"  for `book`/`report`
+}
+
+\addto\captionsenglish{%
+  \renewcommand{\figurename}{Figura}%
+  \renewcommand{\tablename}{Tabla}%
+} 
+
+\usepackage{wallpaper}
+ 
+ 
+%\renewcommand{\figurename}{Figura}
+%\renewcommand{\tablename}{Tabla}
+
+ 
+\begin{document}
+
+%-----------------------------------------------------------------------------------------------------------------
+% PAGINA 1 - PORTADA
+\setcounter{page}{1}
+\pagenumbering{roman}
+\thispagestyle{empty}
+
+\begin{center}
+
+\begin{tabular}{cp{5cm}c}
+\includegraphics[height=2.25cm]{UTYP.png} & 
+& \includegraphics[height=2.25cm]{LogoUPV_2023.png}   \\
+\end{tabular}
+
+\Large \textbf{UNIVERSIDAD POLITÉCNICA DE VICTORIA}
+\vspace{0.5cm}
+\hrule
+\vspace{0.1cm} 
+\hrule
+\vspace{0.5cm}
+
+
+%\HRule \\[\separacionCorta]
+\textbf{\iemph{\NombreProyecto}} \\[\separacionLarga]
+%\Large \textbf{TESINA}
+%\HRule \\[\separacionLarga]
+T E S I N A \\
+
+\textbf{\iemph{\ncarrera}} \\[\separacionLarga]
+
+PRESENTA: \\[\separacionCorta]
+%\textbf{\Capitalize{\NombreAlumno}\\[\separacionLarga]
+\textbf{\iemph{\NombreAlumno}}\\[\separacionLarga]
+%EN CUMPLIMIENTO DE \\[\separacionCorta]
+%LA ESTADÍA DE LA CARRERA DE \\[\separacionCorta]
+
+
+DIRECTOR \\[\separacionCorta]
+\textbf{\iemph{\nasesorinstitucional}} \\[\separacionCorta]
+
+CO-DIRECTOR \\[\separacionCorta]
+\textbf{\iemph{\nasesorempresaria}} \\[\separacionCorta]
+
+ORGANISMO RECEPTOR \\[\separacionCorta]
+\textbf{\iemph{\organismoreceptor}} \\[\separacionLarga]
+
+\end{center}
+\begin{flushright}
+\iemph{Ciudad Victoria, Tamaulipas, \fechaPortada}
+\end{flushright}
+
+\HRule 
+
+
+
+
+%-----------------------------------------------------------------------------------------------------------------
+% PAGINA 5 - RESUMEN EN ESPAÑOL
+
+\clearpage
+\section*{\centering Resumen}
+\addcontentsline{toc}{section}{Resumen}
+%\input{Resumen.tex}
+\textbf{Palabras clave:} Tecnología, Sistema web, Desarrollar, Implementar, Empresas, Modulo.
+
+%-----------------------------------------------------------------------------------------------------------------
+% PAGINA 6 - RESUMEN EN INGLES
+
+\clearpage
+\section*{\centering Summary}
+\addcontentsline{toc}{section}{Summary}
+%\input{Summary.tex}
+\textbf{Keywords}: Technology, Web system, Develop, Implement, Companies, Module.
+
+%-----------------------------------------------------------------------------------------------------------------
+% PAGINA 7 - INDICE
+
+\clearpage
+\addcontentsline{toc}{section}{Índice}
+\renewcommand\contentsname{Índice}
+\tableofcontents
+
+%-----------------------------------------------------------------------------------------------------------------
+% CAPITULOS
+
+
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%\input{Capitulo1.tex}
+
+\clearpage
+%\input{Capitulo2.tex}
+
+\clearpage
+\input{Capitulo3.tex}
+
+\clearpage
+\input{Capitulo4.tex}
+
+\clearpage
+\input{DescripcionDelProblema.tex}
+
+\clearpage
+\input{Motivaciones.tex}
+
+\clearpage
+\input{Justificacion.tex}
+
+\clearpage
+\input{Alcancesymotivaciones.tex}
+
+\clearpage
+\input{Capitulo5.tex}
+
+\clearpage
+\input{Capitulo6.tex}
+
+\clearpage
+\addcontentsline{toc}{section}{Índice de figuras}
+\renewcommand\listfigurename{Índice de figuras}
+
+\listoffigures
+
+\clearpage
+\addcontentsline{toc}{section}{Índice de cuadros}
+\renewcommand\listtablename{Índice de cuadros}
+\listoftables
+
+\clearpage
+\addcontentsline{toc}{section}{Índice de algoritmos}
+\renewcommand\listalgorithmname{Índice de algoritmos}
+\listofalgorithms
+
+%-----------------------------------------------------------------------------------------------------------------
+% REFERENCIAS
+
+
+\clearpage
+%Let's cite! The Einstein's journal paper \cite{dirac} and the Dirac's 
+%book \cite{einstein} are physics related items. 
+
+%\Urlmuskip=0mu plus 1mu\relax
+\addcontentsline{toc}{section}{Referencias} 
+\printbibliography
+ 
+\end{document}

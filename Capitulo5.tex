@@ -1,0 +1,43 @@
+\section{Marco Teórico}
+
+La clasificación de frutas en la industria agrícola es un proceso crucial para garantizar la calidad del producto, especialmente en mercados donde se priorizan estándares específicos de madurez y apariencia. En este proyecto, se aborda la automatización de la clasificación de limones a través de técnicas de visión artificial, utilizando la ESP32-CAM como elemento clave. A continuación, se describen los conceptos teóricos y metodológicos que fundamentan el desarrollo de este sistema.
+
+\subsection{Teoría del Color}
+
+El color es uno de los principales indicadores visuales de la madurez en los limones. La teoría del color proporciona un marco para analizar y clasificar los diferentes tonos que se presentan durante el ciclo de maduración del fruto. En este proyecto, el modelo de color \textbf{HSV} (Hue, Saturation, Value) se utiliza debido a su capacidad para separar la información de matiz (color) de la intensidad, lo que facilita la segmentación del color del limón en distintos rangos de madurez. Esto permite clasificar los frutos de acuerdo a niveles como "verde", "amarillo" o "maduro".
+
+\subsection{Visión Artificial}
+
+La visión artificial es una disciplina que involucra la interpretación de imágenes digitales para obtener información relevante. En el contexto de este proyecto, la visión artificial permite identificar patrones visuales en los limones mediante el análisis de las imágenes capturadas por la \textbf{ESP32-CAM}. El procesamiento de imágenes involucra pasos como la segmentación, detección de características y clasificación de objetos en la imagen. Este enfoque mejora la eficiencia de la selección, eliminando el factor subjetivo del proceso manual.
+
+\subsection{Análisis de Textura y Color}
+
+El análisis de textura y color es fundamental en la clasificación de frutas. En el caso de los limones, la textura de la cáscara y el color externo pueden ofrecer información clave sobre su madurez y calidad. La combinación de estos dos parámetros permite implementar un sistema de clasificación más robusto, utilizando la cámara ESP32-CAM para capturar imágenes y realizar una discriminación basada en características visuales.
+
+\subsection{Teoría de Clasificación}
+
+La clasificación de los limones en este proyecto sigue los principios de la teoría de clasificación supervisada. El objetivo es agrupar los limones en diferentes clases basadas en su color, lo que se realiza entrenando un modelo de machine learning para reconocer patrones en las imágenes capturadas. El sistema aprende de un conjunto de datos previamente etiquetado, y luego utiliza esta información para clasificar nuevas muestras de limones de manera autónoma.
+
+\subsection{Metodologías}
+
+Este proyecto sigue una metodología de \textbf{aprendizaje supervisado}, en la que se entrena un modelo con un conjunto de datos previamente etiquetado. Las imágenes de limones, clasificadas por su madurez, son procesadas para extraer información del color y la textura. Posteriormente, el sistema utiliza estos datos para predecir la clase de madurez de limones nuevos. 
+
+Adicionalmente, se emplea una \textbf{metodología de procesamiento de imágenes digitales}, que involucra la transformación de las imágenes capturadas por la ESP32-CAM. Este proceso incluye la conversión de espacios de color (por ejemplo, de RGB a HSV), la segmentación de las áreas relevantes del limón y la eliminación de ruido, lo que permite una interpretación más precisa de las características visuales.
+
+El desarrollo del sistema también se enmarca en una \textbf{metodología iterativa}, donde el proyecto se divide en fases. Cada fase incluye pruebas parciales y ajustes del modelo, lo que permite la mejora continua del sistema de clasificación a medida que se obtiene nueva retroalimentación.
+
+\subsection{Métodos}
+
+En cuanto a los métodos utilizados, se hace uso de diversas técnicas de machine learning y visión artificial para implementar el sistema de clasificación de limones:
+
+\begin{itemize}
+    \item \textbf{K-Vecinos más Cercanos (KNN)}: Se emplea el algoritmo de \textit{K-Nearest Neighbors} para clasificar los limones en diferentes categorías basadas en su color. Este método compara el color de los limones nuevos con los colores de un conjunto de limones previamente clasificados.
+    
+    \item \textbf{Redes Neuronales Convolucionales (CNN)}: Para una clasificación más avanzada, se utiliza el método de \textit{Redes Neuronales Convolucionales}, que aprende patrones complejos en las imágenes de los limones. Este enfoque permite identificar de manera más precisa las diferencias sutiles en la textura y color que indican la madurez del fruto.
+    
+    \item \textbf{Segmentación de Color}: El método de segmentación se utiliza para aislar las áreas relevantes de la imagen del limón, basado en su color. Se aplica un umbral en el espacio de color \textbf{HSV} para distinguir diferentes niveles de madurez, separando, por ejemplo, las regiones verdes de las amarillas.
+    
+    \item \textbf{K-Means Clustering}: Para explorar la agrupación no supervisada, se utiliza el algoritmo \textit{K-Means}, que agrupa los limones según su similitud en características visuales, sin necesidad de etiquetas previas. Esto es útil en las fases iniciales de la investigación para definir patrones visuales de madurez.
+\end{itemize}
+
+Este conjunto de teorías, metodologías y métodos proporciona un marco sólido para el desarrollo del sistema automatizado de clasificación de limones basado en visión artificial, contribuyendo a la mejora de los procesos en la cadena productiva agrícola.
