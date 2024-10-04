@@ -1,37 +1,31 @@
 \section{Alcances y limitaciones}
 
-Para este proyecto se utilizarán diversas herramientas, tecnologías, hardware y software que permitirán una integración efectiva del sistema.
+El presente proyecto tiene como objetivo principal el desarrollo de un sistema automatizado para la clasificación de limones por color utilizando una cámara ESP32-CAM y algoritmos de procesamiento de imágenes. Este sistema estará diseñado para evaluar el color externo del limón como parámetro fundamental para determinar su grado de madurez. El proyecto abarcará las siguientes áreas de alcance:
 
-\subsection{Hardware}
+\subsection{Alcances}
 \begin{itemize}
-    \item \textbf{ESP32-CAM:} Este módulo se utilizará para capturar imágenes de los limones en tiempo real. Su integración se realizará mediante conexión Wi-Fi, permitiendo la transmisión de datos y la comunicación con un servidor o aplicación de procesamiento de imágenes.
+    \item \textbf{Detección de color}: El sistema será capaz de capturar imágenes de los limones y analizar sus características cromáticas para determinar su madurez. Esto permitirá una clasificación en diferentes categorías basadas en el color, previamente definidas de acuerdo con criterios de calidad comercial.
     
-    \item \textbf{Sensor de Color TCS3200:} Este sensor permitirá medir los parámetros de color de la piel de los limones. Se integrará directamente con el ESP32-CAM, enviando datos sobre el color detectado para su análisis.
+    \item \textbf{Uso de la ESP32-CAM}: La implementación del sistema estará centrada en el uso de la ESP32-CAM, un dispositivo económico y versátil, ideal para entornos con recursos limitados. Este componente será el encargado de capturar las imágenes que se procesarán para realizar la clasificación.
     
-    \item \textbf{Plataforma de Prueba (PCB):} Se utilizará una placa de circuito impreso personalizada para montar el ESP32-CAM y el sensor de color. Esto garantizará una conexión estable y facilitará el manejo del hardware en entornos de producción.
+    \item \textbf{Clasificación de limones}: Este proyecto se enfoca exclusivamente en la clasificación de limones basados en su color externo. No se abordará la detección de otras frutas o productos agrícolas dentro de los parámetros del presente trabajo.
+    
+    \item \textbf{Calibración para condiciones controladas}: El sistema se calibrará y probará en un entorno controlado de iluminación y distancia, lo cual permitirá obtener mediciones precisas y consistentes en términos de coloración de los limones. No obstante, se espera que el modelo final pueda adaptarse a distintas condiciones de campo con ajustes mínimos.
+    
+    \item \textbf{Capacidad de expansión futura}: Aunque el proyecto está centrado en la clasificación de limones, el enfoque basado en visión artificial y color podría adaptarse a otros productos agrícolas en el futuro, ampliando su aplicación más allá de los limones. 
 \end{itemize}
 
-\subsection{Software}
+\subsection{Limitaciones}
 \begin{itemize}
-    \item \textbf{Python:} Se utilizará como lenguaje de programación principal para el procesamiento de imágenes y la implementación de algoritmos de clasificación. Python es ideal por su amplia variedad de bibliotecas y su compatibilidad con tecnologías de visión artificial.
+    \item \textbf{Limitaciones del hardware}: El uso de la ESP32-CAM implica ciertas restricciones en cuanto a la calidad y resolución de las imágenes, lo que podría afectar la precisión del análisis del color en condiciones de iluminación subóptimas o cuando los limones presentan variaciones sutiles de tonalidad. Adicionalmente, la ESP32-CAM tiene una capacidad de procesamiento limitada, por lo que el sistema dependerá de algoritmos optimizados para garantizar un análisis eficiente.
     
-    \item \textbf{OpenCV:} Esta biblioteca de visión por computadora será fundamental para procesar las imágenes capturadas por el ESP32-CAM. Se encargará de realizar la segmentación y análisis de color, así como de aplicar algoritmos de clasificación.
+    \item \textbf{Restricción en la detección de defectos}: El sistema se enfoca exclusivamente en la clasificación por color, por lo que no se abordarán otros parámetros de calidad, como la detección de defectos físicos, textura o tamaño del fruto. Cualquier defecto no relacionado con el color quedará fuera del alcance del sistema de clasificación.
     
-    \item \textbf{Flask:} Este framework de microservicio se utilizará para crear una API que permita la comunicación entre el hardware y el software. La API recibirá datos del sensor y de la cámara, procesará la información y devolverá los resultados de clasificación.
+    \item \textbf{Variabilidad de condiciones de campo}: Aunque el sistema será calibrado en condiciones controladas, su desempeño en entornos reales, donde las condiciones de iluminación o la presencia de sombras y reflejos pueden variar, podría verse afectado. Esto representa una limitación que requeriría adaptaciones adicionales para garantizar la precisión en la clasificación fuera del laboratorio.
+    
+    \item \textbf{Capacidad limitada de procesamiento}: Dado que el proyecto se centra en un hardware de bajo costo, como la ESP32-CAM, el volumen de procesamiento de imágenes y datos puede verse limitado en comparación con sistemas más avanzados. Esto podría afectar la velocidad de procesamiento y la capacidad de análisis en tiempo real en situaciones de alta demanda.
+    
+    \item \textbf{No apto para otros frutos}: El sistema está específicamente diseñado para la clasificación de limones. Si bien es posible modificar el sistema para otros productos agrícolas en el futuro, cualquier intento de clasificar otras frutas requeriría ajustes en los algoritmos y calibraciones adicionales.
 \end{itemize}
 
-\subsection{Tecnologías y APIs}
-\begin{itemize}
-    \item \textbf{RESTful API:} Se implementará una API RESTful para permitir la comunicación entre el módulo ESP32-CAM, el servidor y cualquier aplicación frontend que muestre los resultados. Esta API será responsable de recibir imágenes y datos del sensor, procesarlos y devolver la clasificación de calidad.
-    
-    \item \textbf{Firebase:} Se utilizará Firebase como base de datos en tiempo real para almacenar los resultados de la clasificación y permitir el acceso a los datos desde diferentes dispositivos. Firebase facilitará la sincronización de datos entre el servidor y las aplicaciones que utilicen la información.
-\end{itemize}
-
-\subsection{Integración}
-\begin{itemize}
-    \item \textbf{Comunicación en Tiempo Real:} El ESP32-CAM enviará imágenes y datos del sensor de color a la API RESTful implementada en Flask. Esta API procesará la información utilizando OpenCV y devolverá la clasificación de calidad de los limones.
-    
-    \item \textbf{Almacenamiento y Acceso a Datos:} Los resultados de clasificación se almacenarán en Firebase, permitiendo su acceso desde aplicaciones móviles o web. Esto facilitará la consulta de datos históricos y el monitoreo de la calidad de los limones clasificados.
-    
-    \item \textbf{Interfaz de Usuario:} Se desarrollará una interfaz web sencilla que se conectará a la API para mostrar los resultados de clasificación en tiempo real. Los usuarios podrán visualizar los datos almacenados en Firebase, facilitando la toma de decisiones en la cadena de suministro.
-\end{itemize}
+El alcance de este proyecto se centra en la implementación de un sistema de clasificación de limones por color, utilizando la ESP32-CAM como base tecnológica. Sin embargo, las limitaciones impuestas por el hardware y las condiciones controladas de trabajo delimitan el enfoque del sistema en términos de calidad de imágenes, procesamiento de datos y tipos de defectos detectables.

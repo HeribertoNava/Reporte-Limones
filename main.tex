@@ -102,8 +102,7 @@
 
 
 
-\newcommand{\NombreProyecto}{Prototipo de automatización de Clasificación de Limones por Calidad Utilizando
-Visión Artificial Basada en el Color.}
+\newcommand{\NombreProyecto}{Automatización de Clasificación de Limones por Color.}
 \newcommand{\fechacarta}{26 de Abril de 2021}
 \newcommand{\ncuatrimestre}{Mayo-agosto 2021}
 \newcommand{\nevalador}{Dr. Said Polanco Martagón}
@@ -113,8 +112,7 @@ Visión Artificial Basada en el Color.}
 \newcommand{\organismoreceptor}   {Universidad Politécnica de Victoria}
 
 % NOTA: Dos diagonales juntas (\\) indican un saldo de linea. En este caso particular hay 2 (el titulo se ajusta a tres lineas, porque es muy largo. Hacer las adecuaciones pertinentes
-\newcommand{\NombreProyectoheader}     {Prototipo de automatización de Clasificación de Limones por Calidad Utilizando
-Visión Artificial Basada en el Color}
+\newcommand{\NombreProyectoheader}     {Automatización de Clasificación de Limones por Color}
 \newcommand{\nasesorempresaria}   {Dr. Said Polanco Martagón}
 \newcommand{\fechaPortada}               {Octubre de 2024}
 
@@ -192,12 +190,12 @@ PRESENTA: \\[\separacionCorta]
 %EN CUMPLIMIENTO DE \\[\separacionCorta]
 %LA ESTADÍA DE LA CARRERA DE \\[\separacionCorta]
 
+\vspace{3cm}
 
 DIRECTOR \\[\separacionCorta]
 \textbf{\iemph{\nasesorinstitucional}} \\[\separacionCorta]
 
-CO-DIRECTOR \\[\separacionCorta]
-\textbf{\iemph{\nasesorempresaria}} \\[\separacionCorta]
+
 
 ORGANISMO RECEPTOR \\[\separacionCorta]
 \textbf{\iemph{\organismoreceptor}} \\[\separacionLarga]
@@ -213,22 +211,6 @@ ORGANISMO RECEPTOR \\[\separacionCorta]
 
 
 %-----------------------------------------------------------------------------------------------------------------
-% PAGINA 5 - RESUMEN EN ESPAÑOL
-
-\clearpage
-\section*{\centering Resumen}
-\addcontentsline{toc}{section}{Resumen}
-%\input{Resumen.tex}
-\textbf{Palabras clave:} Tecnología, Sistema web, Desarrollar, Implementar, Empresas, Modulo.
-
-%-----------------------------------------------------------------------------------------------------------------
-% PAGINA 6 - RESUMEN EN INGLES
-
-\clearpage
-\section*{\centering Summary}
-\addcontentsline{toc}{section}{Summary}
-%\input{Summary.tex}
-\textbf{Keywords}: Technology, Web system, Develop, Implement, Companies, Module.
 
 %-----------------------------------------------------------------------------------------------------------------
 % PAGINA 7 - INDICE
@@ -251,10 +233,13 @@ ORGANISMO RECEPTOR \\[\separacionCorta]
 %\input{Capitulo2.tex}
 
 \clearpage
-\input{Capitulo3.tex}
+\input{Introduccion}
 
 \clearpage
-\input{Capitulo4.tex}
+\input{AntecedentesTeoricos}
+
+\clearpage
+\input{MarcoTeorico}
 
 \clearpage
 \input{DescripcionDelProblema.tex}
@@ -268,27 +253,11 @@ ORGANISMO RECEPTOR \\[\separacionCorta]
 \clearpage
 \input{Alcancesymotivaciones.tex}
 
-\clearpage
-\input{Capitulo5.tex}
+
 
 \clearpage
 \input{Capitulo6.tex}
 
-\clearpage
-\addcontentsline{toc}{section}{Índice de figuras}
-\renewcommand\listfigurename{Índice de figuras}
-
-\listoffigures
-
-\clearpage
-\addcontentsline{toc}{section}{Índice de cuadros}
-\renewcommand\listtablename{Índice de cuadros}
-\listoftables
-
-\clearpage
-\addcontentsline{toc}{section}{Índice de algoritmos}
-\renewcommand\listalgorithmname{Índice de algoritmos}
-\listofalgorithms
 
 %-----------------------------------------------------------------------------------------------------------------
 % REFERENCIAS
